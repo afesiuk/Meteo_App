@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MeteoDark</string>
+    <string name="startpage_button">Get started</string>
+    <string name="startpage_header_text">Welcome to Meteo app</string>
+    <string name="startpage_overview_text">A simple app for displaying up-to-date information from a meteostation</string>
+    <string name="configpage_button">Submit</string>
+    <string name="configpage_header_text">Please fill in all the fields:</string>
+    <string name="configpage_field1">Server ip-address</string>
+    <string name="configpage_field2">Server port</string>
+    <string name="configpage_field3_text">Server post-path</string>
+    <string name="configpage_field4_text">Your name</string>
+    <string name="mainpage_header_text">Good evening, Alex</string>
+    <string name="mainpage_subheader_text">It&#180;s time to open window!</string>
+    <string name="desc_menu_button">menu_button</string>
+    <string name="mainpage_card1_header">BME280</string>
+    <string name="mainpage_card2_header">MH-Z19B</string>
+</resources>
