@@ -3,6 +3,7 @@ package com.alex.meteodark;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG_MAIN = "Main_Activity";
@@ -16,5 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ProgressBar progressBar = findViewById(R.id.card1TempBar1);
+        progressBar.setProgress(10);
     }
 }

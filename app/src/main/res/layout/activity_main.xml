@@ -92,7 +92,7 @@
             android:layout_height="12dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:progress="80"
+            android:progress="75"
             android:progressDrawable="@drawable/progress_line_bme1"
             app:layout_constraintEnd_toStartOf="@+id/card1Button"
             app:layout_constraintStart_toStartOf="parent"
