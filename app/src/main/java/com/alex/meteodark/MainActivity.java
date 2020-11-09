@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         List<ObjectAnimator> animatorList = new ArrayList<>();
         for (int i = 0; i < this.listOfProgressBars.size(); i++) {
             animatorList.add(ObjectAnimator.ofInt(this.listOfProgressBars.get(i),
-                    "progress", progress[i]).setDuration(500));
+                    "progress", progress[i]).setDuration(800));
         }
         /* TODO: Choose between playSequentially() and playTogether() */
         animatorSet.playTogether(animatorList.get(0), animatorList.get(1),
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     private void setDefaultValues() {
         for (int i = 0; i < listOfTextViews.size(); i++) {
-            listOfTextViews.get(i).setText("Value: 0");
+            listOfTextViews.get(i).setText(getString(R.string.default_value));
             listOfProgressBars.get(i).setProgress(0);
         }
     }
@@ -227,18 +227,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         this.paragraphTextView.setText(R.string.co2_paragraph_text_warning);
     }
 
-    private void setLastUpdateText(String lastUpdate) {
-        if (Objects.isNull(this.lastUpdateTextView))
+    private void setLastUpdateText(String formatStr) {
+        if (Objects.isNull(this.lastUpdateTextView)) {
             this.lastUpdateTextView = findViewById(R.id.lastUpdateText);
-        String lastUpdateFull = "Last update: " + lastUpdate;
-        this.lastUpdateTextView.setText(lastUpdateFull);
+        }
+        String lastUpdate = "Last update: " + formatStr;
+        this.lastUpdateTextView.setText(lastUpdate);
     }
 
     private void updateUI(SensorData sensorData) {
         setParagraphText(sensorData.getCo2_mhz());
         setProgressBars(sensorData);
         setCardTextViews(sensorData);
-        setLastUpdateText(sensorData.getDate_time());
+        setLastUpdateText(sensorData.getFormatDateTimeStr());
     }
 
     public void openConfigPage(View view) {

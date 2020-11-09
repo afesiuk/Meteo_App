@@ -1,5 +1,10 @@
 package com.alex.meteodark;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SensorData {
     public static final int PARAMS = 5;
     public static final double mmHg = 0.75006375541921;
@@ -72,6 +77,21 @@ public class SensorData {
         preparedText[3] = "Temperature: " + this.temp_mhz + " °C";
         preparedText[4] = "CO2: " + this.co2_mhz + " ppm";
         return preparedText;
+    }
+
+    public List<String> getDateTimeList() {
+        ArrayList<String> dateTimeList = new ArrayList<>();
+        Pattern pattern = Pattern.compile("[a-zA-Z]{3}|[0-9]{1,2}\\s|[0-9:]{8}\\s|[0-9]{4}");
+        Matcher matcher = pattern.matcher(this.date_time);
+        while (matcher.find()) {
+            dateTimeList.add(this.date_time.substring(matcher.start(), matcher.end())
+                    .replaceAll("(\\s+)", ""));
+        }
+        return dateTimeList;
+    }
+
+    public String getFormatDateTimeStr() {
+        return getDateTimeList().get(2) + " " + getDateTimeList().get(1) + ", " + getDateTimeList().get(3);
     }
 
     @Override

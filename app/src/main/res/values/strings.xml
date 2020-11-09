@@ -45,4 +45,6 @@
     <string name="serverpage_text_2">Server port</string>
     <string name="serverpage_text_3">Server post-path</string>
     <string name="serverpage_button_text">Save</string>
+    <!-- Default strings -->
+    <string name="default_value">Value: 0</string>
 </resources>
