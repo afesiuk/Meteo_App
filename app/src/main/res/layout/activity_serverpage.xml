@@ -2,164 +2,124 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/configpage"
+    android:id="@+id/serverpage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    android:orientation="vertical"
-    tools:context=".ConfigPageActivity">
+    tools:context=".ServerPageActivity">
 
     <TextView
-        android:id="@+id/configpageHeaderText"
+        android:id="@+id/serverpageHeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/intersemibold"
-        android:text="@string/configpage_header_text"
+        android:text="Server settings"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/configpageField1Text"
+        android:id="@+id/serverpageText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="34dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/intermedium"
-        android:text="@string/configpage_field1"
+        android:text="@string/serverpage_text_1"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageHeaderText" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageHeaderText" />
 
     <EditText
-        android:id="@+id/configpageField1Et"
+        android:id="@+id/serverpageEt1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:autofillHints=""
         android:background="@drawable/edittext_selector"
         android:digits="0123456789."
         android:ems="10"
-        android:fontFamily="@font/interregular"
         android:inputType="number"
         android:padding="8dp"
-        android:textColor="@android:color/white"
         android:textCursorDrawable="@drawable/color_cursor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField1Text" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageText1" />
 
     <TextView
-        android:id="@+id/configpageField2Text"
+        android:id="@+id/serverpageText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/intermedium"
-        android:text="@string/configpage_field2"
+        android:text="@string/serverpage_text_2"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField1Et" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageEt1" />
 
     <EditText
-        android:id="@+id/configpageField2Et"
+        android:id="@+id/serverpageEt2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:autofillHints=""
         android:background="@drawable/edittext_selector"
         android:ems="10"
-        android:fontFamily="@font/interregular"
         android:inputType="number"
         android:padding="8dp"
-        android:textColor="@android:color/white"
         android:textCursorDrawable="@drawable/color_cursor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField2Text" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageText2" />
 
     <TextView
-        android:id="@+id/configpageField3Text"
+        android:id="@+id/serverpageText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/intermedium"
-        android:text="@string/configpage_field3_text"
+        android:text="@string/serverpage_text_3"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField2Et" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageEt2" />
 
     <EditText
-        android:id="@+id/configpageField3Et"
+        android:id="@+id/serverpageEt3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="32dp"
         android:autofillHints=""
         android:background="@drawable/edittext_selector"
         android:ems="10"
-        android:fontFamily="@font/interregular"
         android:padding="8dp"
-        android:textColor="@android:color/white"
         android:textCursorDrawable="@drawable/color_cursor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField3Text" />
-
-    <TextView
-        android:id="@+id/configpageField4Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="48dp"
-        android:fontFamily="@font/intermedium"
-        android:text="@string/configpage_field4_text"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField3Et" />
-
-    <EditText
-        android:id="@+id/configpageField4Et"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="48dp"
-        android:autofillHints=""
-        android:background="@drawable/edittext_selector"
-        android:ems="10"
-        android:fontFamily="@font/interregular"
-        android:padding="8dp"
-        android:textColor="@android:color/white"
-        android:textCursorDrawable="@drawable/color_cursor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/configpageField4Text" />
+        app:layout_constraintTop_toBottomOf="@+id/serverpageText3" />
 
     <Button
+        android:onClick="applyChanges"
         android:id="@+id/serverpageButtonSave"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -168,14 +128,12 @@
         android:layout_marginBottom="42dp"
         android:background="@drawable/button_selector"
         android:fontFamily="@font/intermedium"
-        android:onClick="openMainPage"
-        android:text="@string/configpage_button"
+        android:text="@string/serverpage_button_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

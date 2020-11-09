@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MeteoDark</string>
+    <string name="app_name">Meteo</string>
     <string name="startpage_button">Get started</string>
     <string name="startpage_header_text">Welcome to Meteo app</string>
     <string name="startpage_overview_text">A simple app for displaying up-to-date information from a meteostation</string>
@@ -14,4 +14,35 @@
     <string name="desc_menu_button">menu_button</string>
     <string name="mainpage_card1_header">BME280</string>
     <string name="mainpage_card2_header">MH-Z19B</string>
+    <!-- SharedPref key-value-->
+    <string name="startUpKey">START_UP_PREF</string>
+    <string name="shared_data_fields">config_data</string>
+    <string name="shared_ip_key">ip_data</string>
+    <string name="shared_port_key">port_data</string>
+    <string name="shared_path_key">path_data</string>
+    <string name="shared_name_key">name_data</string>
+    <!-- Activity tags -->
+    <string name="tag_startpage">Start_Page</string>
+    <string name="tag_configpage">Config_Page</string>
+    <string name="tag_mainpage">Main_Page</string>
+    <string name="last_update_string">Last update: October 30, 10:40</string>
+    <string name="settingspage_header">Settings</string>
+    <string name="settingspage_button_1">Contacts and credits</string>
+    <string name="settingspage_button_2">Server settings</string>
+    <string name="settingspage_button_3">License and rights</string>
+    <string name="settingspage_button_4">Sensors information</string>
+    <string name="co2_paragraph_text_ok">СO2 is within acceptable limits</string>
+    <string name="co2_paragraph_text_warning">It\'s time to open window!</string>
+    <string name="startUpValue">FirstRun</string>
+    <string name="mainpage_card1_button">Card button 1</string>
+    <string name="mainpage_card2_button">Card button 1</string>
+    <string name="mainpage_card1_default_text1">Temperature: 21°C</string>
+    <string name="mainpage_card1_default_text2">Humidity: 75%</string>
+    <string name="mainpage_card1_default_text3">Pressure: 750 mmHg</string>
+    <string name="mainpage_card2_default_text1">Temperature: 21°C</string>
+    <string name="mainpage_card2_default_text2">CO2: 1200 ppm</string>
+    <string name="serverpage_text_1">Server ip-address</string>
+    <string name="serverpage_text_2">Server port</string>
+    <string name="serverpage_text_3">Server post-path</string>
+    <string name="serverpage_button_text">Save</string>
 </resources>

@@ -10,11 +10,14 @@
 
     <TextView
         android:id="@+id/startpageHeaderText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/intersemibold"
         android:text="@string/startpage_header_text"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/startpageOverviewText"
@@ -40,13 +43,15 @@
 
     <Button
         android:id="@+id/startpageButton"
-        android:layout_width="295dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="42dp"
         android:background="@drawable/button_selector"
         android:fontFamily="@font/intermedium"
-        android:onClick="openNextPage"
         android:text="@string/startpage_button"
+        android:onClick="openNextPage"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
