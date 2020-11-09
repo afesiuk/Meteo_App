@@ -8,13 +8,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ConfigPageActivity extends AppCompatActivity {
     private String[] dataFields;
+    private ArrayList<EditText> listOfEditTextViews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +26,12 @@ public class ConfigPageActivity extends AppCompatActivity {
     }
 
     private ArrayList<EditText> getListOfEditText() {
-        ConstraintLayout layout = findViewById(R.id.configpage);
-        ArrayList<EditText> listOfEditText = new ArrayList<>();
-
-        for (int i = 0; i < layout.getChildCount(); i++) {
-            if (layout.getChildAt(i) instanceof EditText) {
-                listOfEditText.add((EditText) layout.getChildAt(i));
-            }
-        }
-        return listOfEditText;
+        if (Objects.isNull(this.listOfEditTextViews)) this.listOfEditTextViews = new ArrayList<>();
+        listOfEditTextViews.add(findViewById(R.id.configpageField1Et));
+        listOfEditTextViews.add(findViewById(R.id.configpageField2Et));
+        listOfEditTextViews.add(findViewById(R.id.configpageField3Et));
+        listOfEditTextViews.add(findViewById(R.id.configpageField4Et));
+        return listOfEditTextViews;
     }
 
     private boolean checkEditTextViews() {
@@ -58,17 +58,10 @@ public class ConfigPageActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(getString(R.string.shared_ip_key), dataFields[0]);
-        Log.d(getString(R.string.tag_configpage), "ip field: " + dataFields[0]);
-
         editor.putString(getString(R.string.shared_port_key), dataFields[1]);
-        Log.d(getString(R.string.tag_configpage), "port field: " + dataFields[1]);
-
         editor.putString(getString(R.string.shared_path_key), dataFields[2]);
-        Log.d(getString(R.string.tag_configpage), "path field: " + dataFields[2]);
-
         editor.putString(getString(R.string.shared_name_key), dataFields[3]);
         editor.apply();
-        Log.d(getString(R.string.tag_configpage), "name field: " + dataFields[3]);
     }
 
     public void openMainPage(View view) {

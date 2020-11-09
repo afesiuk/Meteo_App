@@ -105,14 +105,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     private void getDataFromServer() {
-        if (Objects.isNull(this.clientAPI))
+        if (Objects.isNull(this.clientAPI)) {
             this.clientAPI = getRetrofitClient().create(ClientInterfaceAPI.class);
+        }
         Call<List<SensorData>> call = this.clientAPI.getSensorData(this.path);
         call.enqueue(new Callback<List<SensorData>>() {
             @Override
             public void onResponse(Call<List<SensorData>> call, Response<List<SensorData>> response) {
                 if (!response.isSuccessful()) {
                     Log.e(TAG_MAIN, "Error getting data from server.");
+                    showToastConnectionError();
                     setDefaultValues();
                     return;
                 }
@@ -133,9 +135,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
             @Override
             public void onFailure(Call<List<SensorData>> call, Throwable t) {
-                showToastConnectionError();
-                setDefaultValues();
                 Log.e(TAG_MAIN, "Error: " + t.getLocalizedMessage());
+                setDefaultValues();
+                showToastError(t);
             }
         });
     }
@@ -257,6 +259,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         Toast.makeText(this, "Please check BME280 connection.", Toast.LENGTH_LONG).show();
     }
 
+    private void showToastError(Throwable t) {
+        Toast.makeText(this, "Error: " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+    }
+
     @Override
     public void onRefresh() {
         getDataFromServer();
@@ -276,11 +282,5 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         setDefaultValues();
         loadDataFields();
         onRefresh();
-    }
-
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(this, "Goodbye! See you later!", Toast.LENGTH_SHORT).show();
-        this.finish();
     }
 }
