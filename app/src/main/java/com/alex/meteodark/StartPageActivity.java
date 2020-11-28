@@ -12,6 +12,7 @@ public class StartPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startpage);
+        getWindow().setNavigationBarColor(getColor(R.color.navbar));
     }
 
     public void openNextPage(View view) {

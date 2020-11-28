@@ -19,6 +19,7 @@ public class ServerPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serverpage);
+        getWindow().setNavigationBarColor(getColor(R.color.navbar));
         initListOfEditTexts();
     }
 

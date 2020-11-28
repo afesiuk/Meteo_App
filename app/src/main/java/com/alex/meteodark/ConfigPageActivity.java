@@ -1,14 +1,11 @@
 package com.alex.meteodark;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,37 +14,37 @@ import java.util.Objects;
 
 public class ConfigPageActivity extends AppCompatActivity {
     private String[] dataFields;
-    private ArrayList<EditText> listOfEditTextViews;
+    private ArrayList<EditText> listOfFields;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configpage);
+        getWindow().setNavigationBarColor(getColor(R.color.navbar));
+        initListOfFields();
     }
 
-    private ArrayList<EditText> getListOfEditText() {
-        if (Objects.isNull(this.listOfEditTextViews)) this.listOfEditTextViews = new ArrayList<>();
-        listOfEditTextViews.add(findViewById(R.id.configpageField1Et));
-        listOfEditTextViews.add(findViewById(R.id.configpageField2Et));
-        listOfEditTextViews.add(findViewById(R.id.configpageField3Et));
-        listOfEditTextViews.add(findViewById(R.id.configpageField4Et));
-        return listOfEditTextViews;
+    private void initListOfFields() {
+        if (Objects.isNull(this.listOfFields)) this.listOfFields = new ArrayList<>();
+        listOfFields.add(findViewById(R.id.configpageField1Et));
+        listOfFields.add(findViewById(R.id.configpageField2Et));
+        listOfFields.add(findViewById(R.id.configpageField3Et));
+        listOfFields.add(findViewById(R.id.configpageField4Et));
     }
 
     private boolean checkEditTextViews() {
-        ArrayList<EditText> list = getListOfEditText();
-        this.dataFields = new String[list.size()];
-        int portNum = Integer.parseInt(String.valueOf(list.get(1).getText()));
+        this.dataFields = new String[this.listOfFields.size()];
+        int portNum = Integer.parseInt(String.valueOf(this.listOfFields.get(1).getText()));
         if (portNum < 0 || portNum > 65535) {
             Toast.makeText(this, "Range of available ports: 0 - 65535", Toast.LENGTH_SHORT).show();
             return false;
         }
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getText().toString().isEmpty()) {
+        for (int i = 0; i < this.listOfFields.size(); i++) {
+            if (this.listOfFields.get(i).getText().toString().isEmpty()) {
                 Toast.makeText(this, "Please, fill in all required fields.", Toast.LENGTH_SHORT).show();
                 return false;
             }
-            this.dataFields[i] = list.get(i).getText().toString();
+            this.dataFields[i] = this.listOfFields.get(i).getText().toString();
         }
         return true;
     }

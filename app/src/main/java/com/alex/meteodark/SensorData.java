@@ -57,15 +57,15 @@ public class SensorData {
 
     public int[] getPercentDataForProgressBar() {
         int[] preparedPercent = new int[PARAMS];
-        preparedPercent[0] = getPercentReverse((int) this.temp_bme, 85, -40);
-        preparedPercent[1] = getPercentReverse((int) this.hum_bme, 100, 0);
-        preparedPercent[2] = getPercentReverse((int) (this.press_bme * mmHg), 1000, 0);
-        preparedPercent[3] = getPercentReverse(this.temp_mhz, 85, -40);
-        preparedPercent[4] = getPercentReverse(this.co2_mhz, 8000, 0);
+        preparedPercent[0] = getPercentInRange((int) this.temp_bme, 85, -40);
+        preparedPercent[1] = getPercentInRange((int) this.hum_bme, 100, 0);
+        preparedPercent[2] = getPercentInRange((int) (this.press_bme * mmHg), 1000, 0);
+        preparedPercent[3] = getPercentInRange(this.temp_mhz, 85, -40);
+        preparedPercent[4] = getPercentInRange(this.co2_mhz, 8000, 0);
         return preparedPercent;
     }
 
-    private int getPercentReverse(int current, int max, int min) {
+    private int getPercentInRange(int current, int max, int min) {
         return ((current - min) * 100 / (max - min));
     }
 

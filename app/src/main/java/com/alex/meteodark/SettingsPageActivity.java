@@ -13,6 +13,7 @@ public class SettingsPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settingspage);
+        getWindow().setNavigationBarColor(getColor(R.color.navbar));
     }
 
     @Override

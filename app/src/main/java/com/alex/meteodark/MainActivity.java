@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setNavigationBarColor(getColor(R.color.navbar));
         checkFirstStartUp();
         initListOfProgressBar();
         initListOfTextViews();
